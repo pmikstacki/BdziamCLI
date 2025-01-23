@@ -1,5 +1,5 @@
 using System.Runtime.CompilerServices;
-
+using LinkDotNet.StringBuilder;
 /// <summary>
 /// Provides ANSI control code for console manipulation.
 /// </summary>
@@ -14,4 +14,14 @@ public struct ControlCode
     /// The control sequence introducer ESC[.
     /// </summary>
     public const string CSI = "\u001B\u005B";
+
+    public static string Sequence(char finalToken, params int[] codes)
+    {
+        return ValueStringBuilder.Concat(CSI, string.Join(";", codes), finalToken);
+    }
+
+    public static string CellModeSequence(params int[] codes)
+    {
+        return Sequence(FinalSeqToken.SGR, [1, 34, .. codes]);
+    }
 }

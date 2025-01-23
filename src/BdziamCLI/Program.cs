@@ -8,7 +8,7 @@ Console.WriteLine($"And now {ControlCode.Sequence('m', BasicColor.Blue.Foregroun
 var markdown = "Markdown!!! **THIS IS BOLD** \n *THIS IS ITALIC* \n  **Bold *Italic Bold*** \n ~~STRIKETROUGH~~ \n __Underline__ \n ~~__STRIKETROUGH UNDERLINE~~__ ";
 
 
-AnsiFormatter.FromMarkdown("**this**");
+AnsiFormatter.FromMarkdown("this");
 
 //AnsiFormatter.FromMarkdown(markdown);
 
